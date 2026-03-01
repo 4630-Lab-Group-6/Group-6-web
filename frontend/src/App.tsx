@@ -7,6 +7,7 @@ import OrderDetail from "./Orders/OrderDetail";
 import Home from "./Home/Home";
 import Products from "./Products/Products";
 import Payment from "./Payment/Payment";
+import Security from "./Security/Security";
 
 function App() {
 
@@ -33,6 +34,8 @@ function App() {
             <Link to="/orders">Orders</Link>
             <Link to="/cart">Cart</Link>
             <Link to="/signin">Sign In</Link>
+            <Link to="/payment">Payment</Link>
+            <Link to="/security">Security</Link>
           </div>
         </header>
 
@@ -126,6 +129,10 @@ function App() {
               {/* ORDERS PAGE */}
               <Route path="/orders" element={<Orders />} />
 
+              <Route path="/security" element={<Security />} />
+
+              <Route path="/payment" element={<Payment />} />
+              
               {/* ORDER DETAIL */}
               <Route path="/order/:id" element={<OrderDetail />} />
 
