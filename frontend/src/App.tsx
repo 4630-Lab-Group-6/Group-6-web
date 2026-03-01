@@ -4,6 +4,9 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Orders from "./Orders/Orders";
 import OrderDetail from "./Orders/OrderDetail";
+import Home from "./Home/Home";
+import Products from "./Products/Products";
+import Payment from "./Payment/Payment";
 
 function App() {
 
