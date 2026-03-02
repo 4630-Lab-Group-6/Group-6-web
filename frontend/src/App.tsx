@@ -77,7 +77,7 @@ function App() {
               <Route path="/" element={<Products />} />
 
               {/* ✅ CATALOG PAGE（只加这一条，不动其它） */}
-              <Route path="/catalog" element={<Products />} />
+              <Route path="/catalog" element={<Catalog />} />
 
               {/* ORDERS PAGE */}
               <Route path="/orders" element={<Orders />} />
