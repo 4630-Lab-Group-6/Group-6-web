@@ -1,19 +1,53 @@
 import React from "react";
+import CheckoutSteps from "./CheckoutSteps";
 
-type Props = {
-  step1?: boolean;
-  step2?: boolean;
-  step3?: boolean;
-  step4?: boolean;
-};
+export default function Payment() {
+  const submitHandler = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert("Payment processing...");
+  };
 
-export default function CheckoutSteps(props: Props) {
   return (
-    <div className="checkout-steps">
-      <div className={props.step1 ? "active" : ""}>Signin</div>
-      <div className={props.step2 ? "active" : ""}>Shipping</div>
-      <div className={props.step3 ? "active" : ""}>Payment</div>
-      <div className={props.step4 ? "active" : ""}>Place Order</div>
+    <div>
+      <CheckoutSteps step1 step2 step3 />
+      <div className="form">
+        <form onSubmit={submitHandler}>
+          <ul className="form-container">
+            <li>
+              <h2>Payment</h2>
+            </li>
+
+            <li>
+              <div>
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  id="paypal"
+                  value="paypal"
+                  defaultChecked
+                />
+                <label htmlFor="paypal">Paypal</label>
+              </div>
+
+              <div>
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  id="bitcoin"
+                  value="bitcoin"
+                />
+                <label htmlFor="bitcoin">Bitcoin</label>
+              </div>
+            </li>
+
+            <li>
+              <button type="submit" className="button primary">
+                Continue
+              </button>
+            </li>
+          </ul>
+        </form>
+      </div>
     </div>
   );
 }
