@@ -7,8 +7,6 @@ import OrderDetail from "./Orders/OrderDetail";
 import Home from "./Home/Home";
 import Products from "./Products/Products";
 import Payment from "./Payment/Payment";
-import Security from "./Security/Security";
-import Catalog from "./Catalog/Catalog";
 
 function App() {
 
@@ -36,8 +34,7 @@ function App() {
             <Link to="/orders">Orders</Link>
             <Link to="/cart">Cart</Link>
             <Link to="/signin">Sign In</Link>
-            <Link to="/payment">Payment</Link>
-            <Link to="/security">Security</Link>
+            <Link to="/">Home</Link>
           </div>
         </header>
 
@@ -73,21 +70,12 @@ function App() {
           <div className="content">
 
             <Routes>
-
-              {/* HOME PAGE (PRODUCT LIST) */}
               <Route path="/" element={<Products />} />
 
-              {/* ✅ CATALOG PAGE（只加这一条，不动其它） */}
-              <Route path="/catalog" element={<Catalog />} />S
-
-              {/* ORDERS PAGE */}
               <Route path="/orders" element={<Orders />} />
-              <Route path="/payment" element={<Payment />} />
-              
-              {/* ORDER DETAIL */}
-              <Route path="/order/:id" element={<OrderDetail />} />
-              <Route path="/security" element={<Security />} />
 
+              <Route path="/order/:id" element={<OrderDetail />} />
+              
             </Routes>
 
           </div>

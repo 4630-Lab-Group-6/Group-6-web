@@ -32,7 +32,6 @@ th {
 tbody > tr:nth-child(odd) {
   background-color: #f0f0f0;
 }
-
 html {
 font-size: 1rem;
 box-sizing: border-box;
@@ -163,4 +162,3 @@ a:hover {
 .product-rating{
     margin-bottom: 1rem;
 }
-
