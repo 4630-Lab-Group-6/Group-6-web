@@ -8,6 +8,7 @@ import Home from "./Home/Home";
 import Products from "./Products/Products";
 import Payment from "./Payment/Payment";
 import Security from "./Security/Security";
+import Catalog from "./Catalog/Catalog";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           </div>
 
           <div className="header-links">
+            <Link to="/catalog">Catalog</Link>
             <Link to="/orders">Orders</Link>
             <Link to="/cart">Cart</Link>
             <Link to="/signin">Sign In</Link>
@@ -53,6 +55,16 @@ function App() {
           <ul>
             <li><Link to="/">Pants</Link></li>
             <li><Link to="/">Shirts</Link></li>
+            {/* NEW NAV ITEMS */}
+            <li>
+              <Link to="/catalog" onClick={closeMenu}>Catalog</Link>
+            </li>
+            <li>
+              <Link to="/payment" onClick={closeMenu}>Payment</Link>
+            </li>
+            <li>
+              <Link to="/orders" onClick={closeMenu}>Orders</Link>
+            </li>
           </ul>
         </aside>
 
@@ -63,78 +75,18 @@ function App() {
             <Routes>
 
               {/* HOME PAGE (PRODUCT LIST) */}
-              <Route
-                path="/"
-                element={
-                  <ul className="products">
+              <Route path="/" element={<Products />} />
 
-                    <li>
-                      <div className="product">
-                        <img
-                          className="product-image"
-                          src="/images/d1.jpg"
-                          alt="product"
-                        />
-                        <div className="product-name">
-                          <Link to="/product">Slim Shirt</Link>
-                        </div>
-                        <div className="product-brand">Nike</div>
-                        <div className="product-price">$60</div>
-                        <div className="product-rating">
-                          4.5 Stars (10 Reviews)
-                        </div>
-                      </div>
-                    </li>
-
-                    <li>
-                      <div className="product">
-                        <img
-                          className="product-image"
-                          src="/images/d1.jpg"
-                          alt="product"
-                        />
-                        <div className="product-name">
-                          <Link to="/product">Slim Shirt</Link>
-                        </div>
-                        <div className="product-brand">Nike</div>
-                        <div className="product-price">$60</div>
-                        <div className="product-rating">
-                          4.5 Stars (10 Reviews)
-                        </div>
-                      </div>
-                    </li>
-
-                    <li>
-                      <div className="product">
-                        <img
-                          className="product-image"
-                          src="/images/d1.jpg"
-                          alt="product"
-                        />
-                        <div className="product-name">
-                          <Link to="/product">Slim Shirt</Link>
-                        </div>
-                        <div className="product-brand">Nike</div>
-                        <div className="product-price">$60</div>
-                        <div className="product-rating">
-                          4.5 Stars (10 Reviews)
-                        </div>
-                      </div>
-                    </li>
-
-                  </ul>
-                }
-              />
+              {/* ✅ CATALOG PAGE（只加这一条，不动其它） */}
+              <Route path="/catalog" element={<Catalog />} />S
 
               {/* ORDERS PAGE */}
               <Route path="/orders" element={<Orders />} />
-
-              <Route path="/security" element={<Security />} />
-
               <Route path="/payment" element={<Payment />} />
               
               {/* ORDER DETAIL */}
               <Route path="/order/:id" element={<OrderDetail />} />
+              <Route path="/security" element={<Security />} />
 
             </Routes>
 
